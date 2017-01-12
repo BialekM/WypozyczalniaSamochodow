@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7241F97-058D-481D-80AF-7A42A4CDFEEB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MichalBialekLab4ZadanieDomowe</RootNamespace>
+    <AssemblyName>MichalBialekLab4ZadanieDomowe</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Panels\AdministratorPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\AdministratorPanel.Designer.cs">
+      <DependentUpon>AdministratorPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\CarAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\CarAdd.Designer.cs">
+      <DependentUpon>CarAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\CarPanelForAdministrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\CarPanelForAdministrator.Designer.cs">
+      <DependentUpon>CarPanelForAdministrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\CarView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\CarView.Designer.cs">
+      <DependentUpon>CarView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MichalBialekDbContext.cs" />
+    <Compile Include="Migrations\201701021404462_1.cs" />
+    <Compile Include="Migrations\201701021404462_1.Designer.cs">
+      <DependentUpon>201701021404462_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Human.cs" />
+    <Compile Include="Panels\RentPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\RentPanel.Designer.cs">
+      <DependentUpon>RentPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Interfaces\IReadRepositoryAdministrator.cs" />
+    <Compile Include="Repository\Interfaces\IReadRepositoryCar.cs" />
+    <Compile Include="Repository\Interfaces\IReadRepositoryRent.cs" />
+    <Compile Include="Repository\Interfaces\IReadRepositoryUser.cs" />
+    <Compile Include="Repository\Interfaces\IWriteRepositoryAdministrator.cs" />
+    <Compile Include="Repository\Interfaces\IWriteRepositoryCar.cs" />
+    <Compile Include="Repository\Interfaces\IWriteRepositoryRent.cs" />
+    <Compile Include="Repository\Interfaces\IWriteRepositoryUser.cs" />
+    <Compile Include="Repository\ReadRepositoryAdministrator.cs" />
+    <Compile Include="Repository\ReadRepositoryCar.cs" />
+    <Compile Include="Repository\ReadRepositoryRent.cs" />
+    <Compile Include="Repository\ReadRepositoryUser.cs" />
+    <Compile Include="Repository\WriteRepositoryAdministrator.cs" />
+    <Compile Include="Repository\WriteRepositoryCar.cs" />
+    <Compile Include="Repository\WriteRepositoryRent.cs" />
+    <Compile Include="Repository\WriteRepositoryUser.cs" />
+    <Compile Include="Panels\StartWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\StartWindow.Designer.cs">
+      <DependentUpon>StartWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\Rent.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Panels\SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\SignIn.Designer.cs">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\HumanEditPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\HumanEditPanel.Designer.cs">
+      <DependentUpon>HumanEditPanel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Panels\AdministratorPanel.resx">
+      <DependentUpon>AdministratorPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\CarAdd.resx">
+      <DependentUpon>CarAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\CarPanelForAdministrator.resx">
+      <DependentUpon>CarPanelForAdministrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\CarView.resx">
+      <DependentUpon>CarView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701021404462_1.resx">
+      <DependentUpon>201701021404462_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\RentPanel.resx">
+      <DependentUpon>RentPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\StartWindow.resx">
+      <DependentUpon>StartWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Panels\SignIn.resx">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\HumanEditPanel.resx">
+      <DependentUpon>HumanEditPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
